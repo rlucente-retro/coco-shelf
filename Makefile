@@ -91,11 +91,11 @@ gccretro.got: inputs/$(COCO_GCCRETRO_TARBALL) lwtools.done inputs/gcc-config-gue
 	date > $@
 
 pico-sdk.got: inputs/$(COCO_PICOSDK_TARBALL)
-	set -x; test -d pico-sdk || { tar -xjf inputs/$(COCO_PICOSDK_TARBALL) ; }
+	set -x; test -d pico-sdk || { tar -xjf inputs/$(COCO_PICOSDK_TARBALL) && mv -v $$(basename $(COCO_PICOSDK_TARBALL) .tar.bz2) pico-sdk ; }
 	date > "$@"
 
 picotool.got: inputs/$(COCO_PICOTOOL_TARBALL)
-	set -x; test -d picotool || { tar -xjf inputs/$(COCO_PICOTOOL_TARBALL) ; }
+	set -x; test -d picotool || { tar -xjf inputs/$(COCO_PICOTOOL_TARBALL) && mv -v $$(basename $(COCO_PICOTOOL_TARBALL) .tar.bz2) picotool ; }
 	date > "$@"
 
 ############################################################################
